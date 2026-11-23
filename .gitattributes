@@ -1,0 +1,8 @@
+# Keep the Composer dist download small: plugins vendor this package.
+/tests              export-ignore
+/scripts            export-ignore
+/spec               export-ignore
+/.gitattributes     export-ignore
+/.gitignore         export-ignore
+/phpunit.xml.dist   export-ignore
+/phpstan.neon.dist  export-ignore

@@ -1,0 +1,9 @@
+parameters:
+    level: 8
+    phpVersion: 80100
+    paths:
+        - src
+        - scripts
+        - tests
+    # The SDK checks its arguments at run time too: callers without static analysis pass anything.
+    treatPhpDocTypesAsCertain: false

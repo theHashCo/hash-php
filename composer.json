@@ -1,0 +1,64 @@
+{
+    "name": "hashco/hash-php",
+    "description": "The official PHP library for the Hash crypto payment API: invoices in US dollars, hosted checkout and signed webhooks.",
+    "type": "library",
+    "keywords": ["hash", "hash.bh", "crypto", "payments", "bitcoin", "usdt", "invoices", "webhooks", "payment gateway"],
+    "homepage": "https://docs.hash.bh",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hash",
+            "email": "support@hash.bh",
+            "homepage": "https://hash.bh"
+        }
+    ],
+    "support": {
+        "docs": "https://docs.hash.bh",
+        "issues": "https://github.com/theHashCo/hash-php/issues",
+        "source": "https://github.com/theHashCo/hash-php"
+    },
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.8",
+        "opis/json-schema": "^2.3",
+        "php-http/discovery": "^1.19",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^10.5",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0"
+    },
+    "suggest": {
+        "ext-curl": "The default HTTP transport. Without it, pass a PSR-18 client or install php-http/discovery.",
+        "psr/http-client": "To pass your own PSR-18 HTTP client.",
+        "php-http/discovery": "To find an installed PSR-18 client when ext-curl is missing.",
+        "guzzlehttp/guzzle": "A PSR-18 HTTP client."
+    },
+    "autoload": {
+        "psr-4": {
+            "Hash\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hash\\Tests\\": "tests/",
+            "Hash\\Dev\\": "scripts/"
+        }
+    },
+    "scripts": {
+        "generate": "@php scripts/generate.php",
+        "generate:check": "@php scripts/generate.php --check",
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "smoke": "@php scripts/smoke.php"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
+    "minimum-stability": "stable"
+}
